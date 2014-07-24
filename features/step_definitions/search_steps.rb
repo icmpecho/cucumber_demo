@@ -14,6 +14,10 @@ When(/^I click "(.*?)"$/) do |button|
   click_button(button)
 end
 
+When(/^I wait (\d+) seconds$/) do |seconds|
+  sleep seconds.to_i
+end
+
 Then(/^I should see "(.*?)"$/) do |text|
   expect(page).to have_content(text)
 end
