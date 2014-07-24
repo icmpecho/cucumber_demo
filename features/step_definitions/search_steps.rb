@@ -1,5 +1,5 @@
-Given(/^I am on Google$/) do
-  visit "http://www.google.com"
+Given(/^I am on "(.*?)"$/) do |url|
+  visit url
 end
 
 When(/^I fill in "(.*?)" with "(.*?)"$/) do |field, value|
