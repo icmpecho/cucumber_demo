@@ -11,11 +11,15 @@ When(/^I fill in "(.*?)" with "(.*?)" with enter$/) do |field, value|
 end
 
 When(/^I click "(.*?)"$/) do |button|
-  click_button(button)
+  click_on(button)
 end
 
 When(/^I wait (\d+) seconds$/) do |seconds|
   sleep seconds.to_i
+end
+
+When(/^I click label that contain "(.*?)"$/) do |partial_text|
+  page.find('label', :text => /#{partial_text}/ ).click
 end
 
 Then(/^I should see "(.*?)"$/) do |text|
